@@ -8,3 +8,12 @@ steps:
   commands:
   - echo hello
   - echo world
+- name: Push image
+ image: hb.k8sbridge.com/library/docker:20.13.0
+ settings:
+   repo: hb.k8sbridge.com/library/example-drone-ci
+   tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
+   username:
+     from_secret: docker_username
+   password:
+     from_secret: docker_password
