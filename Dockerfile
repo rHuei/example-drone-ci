@@ -1,4 +1,4 @@
-FROM node:lts-alpine
+FROM hb.k8sbridge.com/library/node:lts-alpine
 
 # install simple http server for serving static content
 RUN npm install -g http-server
