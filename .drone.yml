@@ -11,6 +11,7 @@ steps:
 - name: Push image
   image: hb.k8sbridge.com/library/docker:20.13.0
   settings:
+    registry: hb.k8sbridge.com
     repo: hb.k8sbridge.com/library/example-drone-ci
     tags: [ "${DRONE_COMMIT_SHA:0:7}","latest" ]
     username:
