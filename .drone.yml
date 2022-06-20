@@ -4,7 +4,7 @@ name: default
 
 steps:
 - name: greeting
-  image: alpine
+  image: hb.k8sbridge.com/library/alpine:latest
   commands:
   - echo hello
   - echo world
