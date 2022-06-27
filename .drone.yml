@@ -17,11 +17,7 @@ steps:
 - name: deploy
   image: hb.k8sbridge.com/library/drone-kubernetes:latest
   settings:
-    kubernetes_server: https://192.168.1.170:6443
-    kubernetes_token: 
+    server: https://192.168.1.170:6443
+    token: 
       from_secret: kubernetes_token
-    namespace: default
-    deployment: example-drone-ci
-    repo: hb.k8sbridge.com/library/example-drone-ci
-    container: example-drone-ci
-    tag: ${DRONE_COMMIT_SHA:0:7}
+    template: ./manifests
