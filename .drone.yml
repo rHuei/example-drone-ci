@@ -15,9 +15,10 @@ steps:
       from_secret: docker_password
     debug: true
 - name: deploy
-  image: hb.k8sbridge.com/library/drone-kubernetes:latest
+  image: hb.k8sbridge.com/library/drone-kubectl:latest
   settings:
-    server: https://192.168.1.170:6443
-    token: 
+    kubernetes_server: https://192.168.1.170:6443
+    kubernetes_token:
       from_secret: kubernetes_token
-    template: ./manifests
+  commands:
+  - kubectl apply -f ./manifests
