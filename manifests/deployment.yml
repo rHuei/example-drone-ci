@@ -1,19 +1,19 @@
 apiVersion : apps/v1
 kind: Deployment
 metadata:
-  name: hellovue 
+  name: example-drone-ci
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hellovue
+      app: example-drone-ci
   template:
     metadata:
       labels:
-        app: hellovue 
+        app: example-drone-ci
     spec:
       containers:
         - name: hellovue 
-          image: k8sexampleregistry.azurecr.io/hellovue
+          image: hb.k8sbridge.com/library/example-drone-ci
           ports:
           - containerPort: 8080
