@@ -3,11 +3,6 @@ type: docker
 name: default
 
 steps:
-- name: greeting
-  image: hb.k8sbridge.com/library/alpine:latest
-  commands:
-  - echo hello
-  - echo world
 - name: Push image
   image: hb.k8sbridge.com/library/docker:20.13.0
   settings:
