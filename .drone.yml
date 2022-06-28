@@ -22,3 +22,13 @@ steps:
       from_secret: kubernetes_token
   commands:
   - kubectl apply -f ./manifests
+  when:
+    branch: [ main ]
+    event:
+      exclude: [ deployment ]
+  depends_on:
+  - Push image
+
+trigger:
+  branch:
+  - main
