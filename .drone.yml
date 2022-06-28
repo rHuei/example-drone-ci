@@ -22,6 +22,8 @@ steps:
       from_secret: kubernetes_token
   commands:
   - kubectl apply -f ./manifests
+  - kubectl wait --for=condition=available --timeout=60s deploy/example-drone-ci
+  - kubectl rollout status deployment example-drone-ci
   when:
     branch: [ main ]
     event:
