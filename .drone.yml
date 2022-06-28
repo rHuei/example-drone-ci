@@ -26,6 +26,7 @@ steps:
     branch: [ main ]
     event:
       exclude: [ deployment ]
+      environment: sit
   depends_on:
   - Push image
 
